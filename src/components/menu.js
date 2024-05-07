@@ -1,42 +1,73 @@
 import React, { useState } from 'react';
 import './menu.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const Menu = () => {
-    const [isHovered, setIsHovered] = useState(false);
+    const [hoveredLink, setHoveredLink] = useState(null);
+    const [isButtonHovered, setIsButtonHovered] = useState(false);
+    const [isMenuVisible, setIsMenuVisible] = useState(false); // Start with false for mobile
 
-    const handleMouseEnter = () => {
-      setIsHovered(true);
-    };
-  
-    const handleMouseLeave = () => {
-      setIsHovered(false);
+    const handleMouseEnterLink = (link) => {
+        setHoveredLink(link);
     };
 
-    const buttonStyles = {
-        padding: '8px 15px',
-        color: isHovered ? '#fff' : '#ff413d',
-        backgroundColor: isHovered ? '#ff413d' : 'transparent',
-        border: '2px solid #ff413d',
-        borderRadius: '55px',
-        cursor: 'pointer',
-        position: 'relative',
-        zIndex: 2,
+    const handleMouseLeaveLink = () => {
+        setHoveredLink(null);
+    };
+
+    const handleMouseEnterButton = () => {
+        setIsButtonHovered(true);
+    };
+
+    const handleMouseLeaveButton = () => {
+        setIsButtonHovered(false);
+    };
+
+    const toggleMenu = () => {
+        setIsMenuVisible(!isMenuVisible);
     };
 
     return (
-        <div style={styles.menu}>
+        <div className='menu' style={styles.menu}>
             <div className='portfolio' style={styles.portfolio}>Portfolio</div>
-            <div style={styles.menuLinks}>
-                <a href="#home" style={styles.link} className="active">Home</a>
-                <a href="#about" style={styles.link}>About</a>
-                <a href="#services" style={styles.link}>Services</a>
-                <a href="#projects" style={styles.link}>Projects</a>
-                <button 
-                    style={buttonStyles}
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                >Hire me</button>
+
+            <div className={`menu-links ${isMenuVisible ? 'active' : ''}`} style={styles.menuLinks}>
+                <a href="#home"
+                    style={styles.menuLink}
+                    className={hoveredLink === 'home' ? 'link-hovered' : ''}
+                    onMouseEnter={() => handleMouseEnterLink('home')}
+                    onMouseLeave={handleMouseLeaveLink}
+                >Home</a>
+                <a href="#about"
+                    style={styles.menuLink}
+                    className={hoveredLink === 'about' ? 'link-hovered' : ''}
+                    onMouseEnter={() => handleMouseEnterLink('about')}
+                    onMouseLeave={handleMouseLeaveLink}
+                >About</a>
+                <a href="#services"
+                    style={styles.menuLink}
+                    className={hoveredLink === 'services' ? 'link-hovered' : ''}
+                    onMouseEnter={() => handleMouseEnterLink('services')}
+                    onMouseLeave={handleMouseLeaveLink}
+                >Service</a>
+                <button
+                    style={{ ...styles.button, ...(isButtonHovered && styles.buttonHovered) }}
+                    onMouseEnter={handleMouseEnterButton}
+                    onMouseLeave={handleMouseLeaveButton}
+                >
+                    Hire me
+                </button>
+
             </div>
+
+            {/* Toggle menu icon */}
+            <FontAwesomeIcon
+                icon={faBars}
+                style={{ ...styles.menuIcon, color: '#0d152c' }}
+                onClick={toggleMenu}
+                className="menu-icon"
+            />
         </div>
     );
 };
@@ -50,22 +81,36 @@ const styles = {
         backgroundColor: '#f7f8f9',
         position: 'relative',
         zIndex: 1,
+        width: '100%',
     },
     portfolio: {
         color: '#0d152c',
         fontSize: '24px',
         fontWeight: '600',
-        marginLeft: '20px',
     },
-    menuLinks: {
-        display: 'flex',
-        alignItems: 'center',
-        gap: '30px',
+    button: {
+        padding: '8px 15px',
+        color: '#ff413d',
+        backgroundColor: 'transparent',
+        border: '2px solid #ff413d',
+        borderRadius: '55px',
+        cursor: 'pointer',
+        position: 'relative',
+        zIndex: 2,
     },
-    link: {
-        textDecoration: 'none',
-        color: '#676e7a',
+    buttonHovered: {
+        backgroundColor: '#ff413d',
+        color: '#fff',
     },
+    menuIcon: {
+        cursor: 'pointer',
+        color: 'black',
+        display: 'none',
+    },
+    menuLink: {
+        padding: '20px',
+    },
+
 };
 
 export default Menu;
