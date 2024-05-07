@@ -1,0 +1,11 @@
+button:hover {
+    background-color: #ff413d;
+    color: #fff;
+  }
+.portfolio:hover {
+    color: blue;
+  }
+
+.portfolio {
+    cursor: pointer;
+}
