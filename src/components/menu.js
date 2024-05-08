@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './menu.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { color } from 'three/examples/jsm/nodes/Nodes.js';
 
 const Menu = () => {
     const [hoveredLink, setHoveredLink] = useState(null);
@@ -64,7 +65,7 @@ const Menu = () => {
             {/* Toggle menu icon */}
             <FontAwesomeIcon
                 icon={faBars}
-                style={{ ...styles.menuIcon, color: '#0d152c' }}
+                style={{ ...styles.menuIcon, color: 'black' }}
                 onClick={toggleMenu}
                 className="menu-icon"
             />
@@ -78,25 +79,29 @@ const styles = {
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: '20px',
-        backgroundColor: '#ebeef1',
+        backgroundColor : '#f7f8f9',
         position: 'relative',
         zIndex: 1,
+        fontSize :'17px',
         width: '100%',
     },
     portfolio: {
         color: '#0d152c',
-        fontSize: '24px',
+        fontSize: '25px',
         fontWeight: '600',
+        color:'inherit',
+        paddingLeft : '10px',
     },
     button: {
-        padding: '8px 15px',
-        color: '#ff413d',
+        padding: '10px 15px',
         backgroundColor: 'transparent',
+        color:'#ff413d',
         border: '2px solid #ff413d',
         borderRadius: '55px',
         cursor: 'pointer',
         position: 'relative',
         zIndex: 2,
+        fontSize :'17px',
     },
     buttonHovered: {
         backgroundColor: '#ff413d',
@@ -104,11 +109,11 @@ const styles = {
     },
     menuIcon: {
         cursor: 'pointer',
-        color: 'black',
         display: 'none',
     },
     menuLink: {
         padding: '20px',
+        color:'inherit',
     },
 
 };

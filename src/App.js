@@ -1,17 +1,16 @@
 import React from 'react';
 import Menu from './components/menu';
 import Home from './components/home';
-import Particles from 'react-tsparticles';
+import About from './components/about';
+import Services from './components/services';
 
-function App() {
+function App() {    
     return (
         <div>
-            <div>
                 <Menu />
-            </div>
-            <div>
                 <Home />
-            </div>
+                <About />
+                <Services />
         </div>
 
 
