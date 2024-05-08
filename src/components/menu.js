@@ -78,7 +78,7 @@ const styles = {
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: '20px',
-        backgroundColor: '#f7f8f9',
+        backgroundColor: '#ebeef1',
         position: 'relative',
         zIndex: 1,
         width: '100%',
