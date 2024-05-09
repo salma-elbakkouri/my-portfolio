@@ -13,7 +13,7 @@ const servicesData = [
         icon: (
             <IconDeviceLaptop
                 className="h-12 w-12"
-                style={{ color: '#0d152c' }} // Green color
+                style={{ color: 'white' }} // Green color
             />
         ),
     },
@@ -23,7 +23,7 @@ const servicesData = [
         icon: (
             <IconDeviceMobile
                 className="h-12 w-12"
-                style={{ color: '#0d152c' }} // Green color
+                style={{ color: 'white' }} // Green color
             />
         ),
     },
@@ -33,7 +33,7 @@ const servicesData = [
         icon: (
             <IconPalette
                 className="h-12 w-12"
-                style={{ color: '#0d152c' }} // Green color
+                style={{ color: 'white' }} // Green color
             />
         ),
     },
@@ -41,18 +41,19 @@ const servicesData = [
 
 const Services = () => {
     return (
-        <div className="min-h-screen bg-gray-100 py-16 text-center flex flex-col justify-center">
+        <div className="min-h-screen py-16 text-center flex flex-col justify-center">
             <h2 className="text-4xl text-gray-900 mb-12">My Services</h2>
             <div className="max-w-5xl mx-auto px-4 sm:px-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {servicesData.map((service, index) => (
                         <div
                             key={index}
-                            className="bg-white border border-gray-400 rounded-lg p-8 flex flex-col items-center text-center transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-lg"
+                            className="border border-gray-400 rounded-lg p-8 flex flex-col items-center text-center transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-lg"
                         >
                             <div className="mb-4">{service.icon}</div>
                             <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                            <p className="text-gray-700">{service.description}</p>
+                            <p 
+                            style={{color : '#4e5b6d'}}>{service.description}</p>
                         </div>
                     ))}
                 </div>

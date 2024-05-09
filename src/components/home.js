@@ -1,28 +1,46 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Home = () => {
+    const [darkMode, setDarkMode] = useState(false);
+
+    // Function to update dark mode state
+    const updateDarkModeState = () => {
+        const html = document.documentElement;
+        setDarkMode(html.classList.contains('dark'));
+    };
+
+    // Initial setup and event listener for theme changes
+    useEffect(() => {
+        updateDarkModeState();
+        window.addEventListener('themeChange', updateDarkModeState);
+
+        return () => {
+            window.removeEventListener('themeChange', updateDarkModeState);
+        };
+    }, []);
+
     const styles = {
         home: {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
             flexDirection: 'column',
-            backgroundColor: '#f7f8f9',
             position: 'relative',
             padding: '10% 0',
             width: '100%',
             minHeight: '80vh',
         },
         profileInfoH1: {
-            color: '#0d152c',
             fontSize: 'clamp(30px, 6vw, 70px)',
             fontWeight: 600,
             textAlign: 'center',
+            color: darkMode ? '#F3F3F3' : '#404658', // Adjusted colors
         },
         profileInfoP: {
             textAlign: 'center',
             lineHeight: 1.7,
             color: '#676e7a',
+            fontSize: 'clamp(16px, 4vw, 24px)',
             marginTop: 0,
             marginBottom: '20px',
             width: '80%',
@@ -44,8 +62,7 @@ const Home = () => {
         <div style={styles.home}>
             <h1 style={styles.profileInfoH1}>Hi, I'm Salma</h1>
             <h1 style={styles.profileInfoH1}>Frontend developer</h1>
-            <p style={styles.profileInfoP}>
-                I'm a mobile & web developer   </p>
+            <p style={styles.profileInfoP}>I'm a mobile & web developer</p>
             <button style={styles.profileInfoButton}>Download My Resume</button>
         </div>
     );

@@ -4,7 +4,7 @@ import laptopImage from '../assets/laptop.png'; // Adjust the path as needed
 const About = () => {
     const styles = {
         about: {
-            backgroundColor: 'white',
+            // backgroundColor: 'white',
             minHeight: '100vh',
             display: 'flex',
             alignItems: 'center',
@@ -14,17 +14,7 @@ const About = () => {
             overflow: 'hidden',
             padding: '20px',
         },
-        aboutBefore: {
-            content: "''",
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            backgroundImage: 'radial-gradient(#ff413d 5%, transparent 0)',
-            backgroundSize: '20px 20px',
-            zIndex: 0,
-        },
+   
         aboutContent: {
             display: 'flex',
             alignItems: 'center',
@@ -65,7 +55,7 @@ const About = () => {
             marginTop: '0',
         },
         aboutTextH3: {
-            color: '#0d152c',
+            color: 'white',
             fontSize: 'clamp(18px, 4vw, 40px)',
             marginBottom: '5px',
             marginTop: '0',
