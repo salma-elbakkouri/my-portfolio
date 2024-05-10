@@ -1,4 +1,3 @@
-// src/components/BackgroundParticles.js
 import React, { useEffect, useState } from 'react';
 import Particles from 'react-tsparticles';
 import { loadFull } from 'tsparticles';
@@ -26,23 +25,16 @@ const BackgroundParticles = () => {
     };
 
     const getThemeBasedOptions = (isDark) => {
-        // Define the gradients for dark and light modes
-        const darkBackground = 'linear-gradient(180deg, #f0f4ff, #000000)';
-        const lightBackground = 'linear-gradient(180deg, #f0f4ff, #404658)';
-        const darkParticleGradient = [
-            { stop: 0, color: '#f0f4ff' },
-            { stop: 1, color: '#000000' },
-        ];
-        const lightParticleGradient = [
-            { stop: 0, color: '#f0f4ff' },
-            { stop: 1, color: '#404658' },
-        ];
+        const lightBackground = {
+            value: 'url(src/assets/bg1.png)',
+        };
+        const darkBackground = {
+            value: 'url(src/assets/bg2.jpg)',
+        };
 
         return {
             background: {
-                color: {
-                    value: isDark ? darkBackground : lightBackground,
-                },
+                color: isDark ? darkBackground : lightBackground,
             },
             fpsLimit: 60,
             interactivity: {
@@ -69,10 +61,10 @@ const BackgroundParticles = () => {
             },
             particles: {
                 color: {
-                    value: isDark ? '#f0f4ff' : '#404658',
+                    value: isDark ? '#FFFFFF' : '#404658',
                 },
                 links: {
-                    color: isDark ? '#f0f4ff' : '#404658',
+                    color: isDark ? '#FFFFFF' : '#404658',
                     distance: 150,
                     enable: true,
                     opacity: 0.5,

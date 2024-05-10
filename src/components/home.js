@@ -39,7 +39,7 @@ const Home = () => {
         profileInfoP: {
             textAlign: 'center',
             lineHeight: 1.7,
-            color: '#676e7a',
+            color: '#FFF',
             fontSize: 'clamp(16px, 4vw, 24px)',
             marginTop: 0,
             marginBottom: '20px',
@@ -50,12 +50,13 @@ const Home = () => {
             fontSize: 'clamp(14px, 2vw, 18px)',
             padding: 'clamp(10px, 3vw, 17px) clamp(20px, 8vw, 40px)',
             color: '#fff',
-            backgroundColor: '#ff413d',
+            backgroundColor: '#01121a',
             border: 'none',
             borderRadius: '35px',
-            boxShadow: '0 5px 15px rgba(255, 65, 61, 0.5)',
+            boxShadow: '0 5px 15px rgba(64, 70, 88, 0.5)', // Adjusted color and opacity
             cursor: 'pointer',
-        },
+        }
+        
     };
 
     return (
@@ -63,7 +64,7 @@ const Home = () => {
             <h1 style={styles.profileInfoH1}>Hi, I'm Salma</h1>
             <h1 style={styles.profileInfoH1}>Frontend developer</h1>
             <p style={styles.profileInfoP}>I'm a mobile & web developer</p>
-            <button style={styles.profileInfoButton}>Download My Resume</button>
+            <button style={styles.profileInfoButton}>Contact Me</button>
         </div>
     );
 };

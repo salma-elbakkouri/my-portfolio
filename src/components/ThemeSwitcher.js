@@ -1,4 +1,3 @@
-// src/components/ThemeSwitcher.js
 import React, { useEffect, useState } from 'react';
 
 const triggerThemeChange = () => {

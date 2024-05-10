@@ -1,10 +1,25 @@
-import React from 'react';
-import laptopImage from '../assets/laptop.png'; // Adjust the path as needed
+import React, { useState, useEffect } from 'react';
+import laptopImagePng from '../assets/laptoppng.png';
 
 const About = () => {
+    const [darkMode, setDarkMode] = useState(false);
+
+    const updateDarkModeState = () => {
+        const html = document.documentElement;
+        setDarkMode(html.classList.contains('dark'));
+    };
+
+    useEffect(() => {
+        updateDarkModeState();
+        window.addEventListener('themeChange', updateDarkModeState);
+
+        return () => {
+            window.removeEventListener('themeChange', updateDarkModeState);
+        };
+    }, []);
+
     const styles = {
         about: {
-            // backgroundColor: 'white',
             minHeight: '100vh',
             display: 'flex',
             alignItems: 'center',
@@ -14,7 +29,6 @@ const About = () => {
             overflow: 'hidden',
             padding: '20px',
         },
-   
         aboutContent: {
             display: 'flex',
             alignItems: 'center',
@@ -37,8 +51,6 @@ const About = () => {
             height: 'clamp(150px, 30vw, 300px)',
             objectFit: 'cover',
             padding: '0',
-            boxShadow:
-                '0 0 0 1px #ff403d3a, 0 0 0 20px white, 0 0 0 21px #ff403d3a',
         },
         aboutText: {
             flex: '1 1 500px',
@@ -53,15 +65,16 @@ const About = () => {
             fontSize: 'clamp(16px, 3vw, 22px)',
             marginBottom: '5px',
             marginTop: '0',
+            color: '#ff413d',
         },
         aboutTextH3: {
-            color: 'white',
             fontSize: 'clamp(18px, 4vw, 40px)',
             marginBottom: '5px',
             marginTop: '0',
+            color: darkMode ? '#ffffff' : '#404658',
         },
         aboutTextP: {
-            color: '#676e7a',
+            color: darkMode ? '#ffffff' : '#404658',
             lineHeight: 1.5,
             marginTop: '10px',
             marginBottom: '0',
@@ -70,26 +83,26 @@ const About = () => {
         aboutTextButton: {
             padding: 'clamp(8px, 1.5vw, 13px) clamp(20px, 3vw, 45px)',
             color: '#fff',
-            backgroundColor: '#ff413d',
+            backgroundColor: '#01121a',
             border: 'none',
             borderRadius: '35px',
-            boxShadow: '0 5px 15px rgba(255, 65, 61, 0.5)',
+            boxShadow: '0 5px 15px rgba(64, 70, 88, 0.5)', // Adjusted color and opacity
             cursor: 'pointer',
             fontSize: 'clamp(12px, 2vw, 18px)',
             marginTop: '20px',
             position: 'relative',
             zIndex: 2,
         },
-        // Responsive styles for small screens
         smallScreenContent: {
             flexDirection: 'column',
             alignItems: 'center',
+            justifyContent: 'center', // Added to center horizontally
             gap: '20px',
             width: '90%', // To center the content horizontally
             maxWidth: '500px',
         },
         smallScreenImageImg: {
-            marginTop : '40px',
+            marginTop: '40px',
             width: 'clamp(100px, 40vw, 250px)',
             height: 'clamp(100px, 40vw, 250px)',
         },
@@ -99,25 +112,15 @@ const About = () => {
         },
     };
 
-    // Determine if the screen is small
     const isSmallScreen = window.innerWidth <= 768;
 
     return (
         <div id="about" style={styles.about}>
-            <div style={styles.aboutBefore}></div>
-            <div style={{ ...styles.aboutContent, ...(isSmallScreen && styles.smallScreenContent) }}>
-                <div style={{ ...styles.aboutImage }}>
-                    <img
-                        src={laptopImage}
-                        alt="Profile Image"
-                        style={{ ...styles.aboutImageImg, ...(isSmallScreen && styles.smallScreenImageImg) }}
-                    />
-                </div>
+            <div style={{ ...styles.aboutContent, ...(isSmallScreen && styles.smallScreenContent) }} className={isSmallScreen ? "flex flex-col items-center" : ""}>
+               
                 <div style={{ ...styles.aboutText, ...(isSmallScreen && styles.smallScreenText) }}>
-                    <h2 style={styles.aboutTextH2}>
-                        <span style={styles.aboutTextSpan}>About</span> me
-                    </h2>
-                    <h3 style={styles.aboutTextH3}>WHO I AM ?</h3>
+                    
+                    <h3 style={styles.aboutTextH3}>WHO I AM?</h3>
                     <p style={styles.aboutTextP}>
                         I'm an Android apps developer proficient in Java, React
                         Native, and Flutter. Additionally, I excel in web
@@ -125,7 +128,7 @@ const About = () => {
                         like Tailwind, Bootstrap, and Sass. My focus is on
                         creating seamless user experiences across platforms.
                     </p>
-                    <button style={styles.aboutTextButton}>Download CV</button>
+                    <button style={styles.aboutTextButton}>Download My Resume</button>
                 </div>
             </div>
         </div>

@@ -17,10 +17,21 @@ html, body {
     padding: 0;
 }
 
-body.light {
-    @apply bg-light-gradient text-[#404658];
+.light {
+    position: relative; /* Make sure the parent is positioned relative */
+    background-image: url('./assets/bg15.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
-body.dark {
-    @apply bg-dark-gradient text-white;
+
+
+.dark {
+    background-image: url('./assets/bg15.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
+
+
