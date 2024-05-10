@@ -1,24 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const Home = () => {
-    const [darkMode, setDarkMode] = useState(false);
-
-    // Function to update dark mode state
-    const updateDarkModeState = () => {
-        const html = document.documentElement;
-        setDarkMode(html.classList.contains('dark'));
-    };
-
-    // Initial setup and event listener for theme changes
-    useEffect(() => {
-        updateDarkModeState();
-        window.addEventListener('themeChange', updateDarkModeState);
-
-        return () => {
-            window.removeEventListener('themeChange', updateDarkModeState);
-        };
-    }, []);
-
     const styles = {
         home: {
             display: 'flex',
@@ -34,12 +16,12 @@ const Home = () => {
             fontSize: 'clamp(30px, 6vw, 70px)',
             fontWeight: 600,
             textAlign: 'center',
-            color: darkMode ? '#F3F3F3' : '#404658', // Adjusted colors
+            color: '#FFFFFF',
         },
         profileInfoP: {
             textAlign: 'center',
             lineHeight: 1.7,
-            color: '#FFF',
+            color: '#FFFFFF',
             fontSize: 'clamp(16px, 4vw, 24px)',
             marginTop: 0,
             marginBottom: '20px',
@@ -49,14 +31,13 @@ const Home = () => {
         profileInfoButton: {
             fontSize: 'clamp(14px, 2vw, 18px)',
             padding: 'clamp(10px, 3vw, 17px) clamp(20px, 8vw, 40px)',
-            color: '#fff',
+            color: '#FFFFFF',
             backgroundColor: '#01121a',
             border: 'none',
             borderRadius: '35px',
-            boxShadow: '0 5px 15px rgba(64, 70, 88, 0.5)', // Adjusted color and opacity
+            boxShadow: '0 5px 15px rgba(64, 70, 88, 0.5)',
             cursor: 'pointer',
         }
-        
     };
 
     return (

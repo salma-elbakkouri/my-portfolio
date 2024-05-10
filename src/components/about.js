@@ -1,23 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import laptopImagePng from '../assets/laptoppng.png';
 
 const About = () => {
-    const [darkMode, setDarkMode] = useState(false);
-
-    const updateDarkModeState = () => {
-        const html = document.documentElement;
-        setDarkMode(html.classList.contains('dark'));
-    };
-
-    useEffect(() => {
-        updateDarkModeState();
-        window.addEventListener('themeChange', updateDarkModeState);
-
-        return () => {
-            window.removeEventListener('themeChange', updateDarkModeState);
-        };
-    }, []);
-
     const styles = {
         about: {
             minHeight: '100vh',
@@ -36,7 +20,7 @@ const About = () => {
             flexDirection: 'row',
             flexWrap: 'wrap',
             width: '90%',
-            maxWidth: '1200px',
+            maxWidth: '900px',
             zIndex: 1,
             gap: '20px',
         },
@@ -71,14 +55,14 @@ const About = () => {
             fontSize: 'clamp(18px, 4vw, 40px)',
             marginBottom: '5px',
             marginTop: '0',
-            color: darkMode ? '#ffffff' : '#404658',
+            color: '#FFFFFF',
         },
         aboutTextP: {
-            color: darkMode ? '#ffffff' : '#404658',
+            color: '#FFFFFF',
             lineHeight: 1.5,
             marginTop: '10px',
             marginBottom: '0',
-            fontSize: 'clamp(12px, 2vw, 18px)',
+            fontSize: 'clamp(14px, 2vw, 22px)',
         },
         aboutTextButton: {
             padding: 'clamp(8px, 1.5vw, 13px) clamp(20px, 3vw, 45px)',
@@ -86,7 +70,7 @@ const About = () => {
             backgroundColor: '#01121a',
             border: 'none',
             borderRadius: '35px',
-            boxShadow: '0 5px 15px rgba(64, 70, 88, 0.5)', // Adjusted color and opacity
+            boxShadow: '0 5px 15px rgba(64, 70, 88, 0.5)',
             cursor: 'pointer',
             fontSize: 'clamp(12px, 2vw, 18px)',
             marginTop: '20px',
@@ -96,9 +80,9 @@ const About = () => {
         smallScreenContent: {
             flexDirection: 'column',
             alignItems: 'center',
-            justifyContent: 'center', // Added to center horizontally
+            justifyContent: 'center',
             gap: '20px',
-            width: '90%', // To center the content horizontally
+            width: '90%',
             maxWidth: '500px',
         },
         smallScreenImageImg: {
@@ -116,17 +100,14 @@ const About = () => {
 
     return (
         <div id="about" style={styles.about}>
-            <div style={{ ...styles.aboutContent, ...(isSmallScreen && styles.smallScreenContent) }} className={isSmallScreen ? "flex flex-col items-center" : ""}>
-               
+            <div style={{ ...styles.aboutContent, ...(isSmallScreen && styles.smallScreenContent) }}>
                 <div style={{ ...styles.aboutText, ...(isSmallScreen && styles.smallScreenText) }}>
-                    
                     <h3 style={styles.aboutTextH3}>WHO I AM?</h3>
                     <p style={styles.aboutTextP}>
-                        I'm an Android apps developer proficient in Java, React
-                        Native, and Flutter. Additionally, I excel in web
-                        development with JavaScript, React, and CSS frameworks
-                        like Tailwind, Bootstrap, and Sass. My focus is on
-                        creating seamless user experiences across platforms.
+                        I'm an Android apps developer proficient in Java, React Native, and Flutter.
+                        Additionally, I excel in web development with JavaScript, React, and CSS frameworks
+                        like Tailwind, Bootstrap, and Sass. My focus is on creating seamless user experiences
+                        across platforms.
                     </p>
                     <button style={styles.aboutTextButton}>Download My Resume</button>
                 </div>

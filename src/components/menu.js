@@ -1,36 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const Menu = () => {
   const [hoveredLink, setHoveredLink] = useState(null);
   const [isMenuVisible, setIsMenuVisible] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 840);
 
   const handleMouseEnterLink = (link) => setHoveredLink(link);
   const handleMouseLeaveLink = () => setHoveredLink(null);
   const toggleMenu = () => setIsMenuVisible(!isMenuVisible);
 
-  const toggleDarkMode = () => {
-    const html = document.documentElement;
-    if (darkMode) {
-      html.classList.remove('dark');
-      html.classList.add('light');
-    } else {
-      html.classList.remove('light');
-      html.classList.add('dark');
-    }
-    setDarkMode(!darkMode);
-    const event = new Event('themeChange');
-    window.dispatchEvent(event);
-  };
-
   useEffect(() => {
-    const html = document.documentElement;
-    const initialDarkMode = html.classList.contains('dark');
-    setDarkMode(initialDarkMode);
-
     const handleResize = () => setIsSmallScreen(window.innerWidth <= 840);
     window.addEventListener('resize', handleResize);
 
@@ -41,10 +22,7 @@ const Menu = () => {
     <div className="menu flex justify-between items-center px-5 py-4 relative z-10 w-full">
       {/* Left Logo */}
       <div className="flex items-center">
-        <div
-          className="text-2xl font-semibold"
-          style={{ color: darkMode ? '#F3F3F3' : '#262a36' }}
-        >
+        <div className="text-2xl font-semibold pl-2" style={{ color: '#FFFFFF' }}>
           Portfolio
         </div>
       </div>
@@ -61,7 +39,7 @@ const Menu = () => {
           className={`menu-link ${hoveredLink === 'projects' ? 'link-hovered' : ''}`}
           onMouseEnter={() => handleMouseEnterLink('projects')}
           onMouseLeave={handleMouseLeaveLink}
-          style={{ color: darkMode ? '#F3F3F3' : '#404658' }}
+          style={{ color: '#FFFFFF' }}
         >
           Projects
         </a>
@@ -70,7 +48,7 @@ const Menu = () => {
           className={`menu-link ${hoveredLink === 'skills' ? 'link-hovered' : ''}`}
           onMouseEnter={() => handleMouseEnterLink('skills')}
           onMouseLeave={handleMouseLeaveLink}
-          style={{ color: darkMode ? '#F3F3F3' : '#404658' }}
+          style={{ color: '#FFFFFF' }}
         >
           Skills
         </a>
@@ -79,39 +57,20 @@ const Menu = () => {
           className={`menu-link ${hoveredLink === 'experience' ? 'link-hovered' : ''}`}
           onMouseEnter={() => handleMouseEnterLink('experience')}
           onMouseLeave={handleMouseLeaveLink}
-          style={{ color: darkMode ? '#F3F3F3' : '#404658' }}
+          style={{ color: '#FFFFFF' }}
         >
           Experience
         </a>
-        
-        {/* Theme Switch Link */}
-        {isMenuVisible && (
-          <a
-            className="menu-link"
-            href="#switch-theme"
-            onClick={toggleDarkMode}
-            style={{ color: darkMode ? '#F3F3F3' : '#404658' }}
-          >
-            Switch Theme
-          </a>
-        )}
       </div>
 
-      {/* Right Menu Icon and Theme Icon */}
+      {/* Right Menu Icon */}
       {isSmallScreen ? (
         <FontAwesomeIcon
           icon={faBars}
-          className={`menu-icon cursor-pointer ${darkMode ? 'text-white' : 'text-black'}`}
+          className="menu-icon cursor-pointer text-white"
           onClick={toggleMenu}
         />
-      ) : (
-        <FontAwesomeIcon
-          icon={darkMode ? faSun : faMoon}
-          className="cursor-pointer text-2xl theme-icon"
-          onClick={toggleDarkMode}
-          color={darkMode ? '#F3F3F3' : 'black'}
-        />
-      )}
+      ) : null}
     </div>
   );
 };
@@ -125,7 +84,7 @@ const styles = `
     color: black;
   }
 
-  .menu-icon, .theme-icon {
+  .menu-icon {
     display: inline-block !important;
     font-size: 25px;
   }
@@ -142,7 +101,7 @@ const styles = `
     justify-content: center;
     align-items: center;
     z-index: 9;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 1);
     height: calc(100vh - 60px);
   }
 
@@ -151,6 +110,7 @@ const styles = `
     padding: 10px 0;
     width: 100%;
     text-align: center;
+    color: white;
   }
 
   @media (max-width: 840px) {
@@ -169,7 +129,7 @@ const styles = `
     }
 
     .menu-links.active {
-      background-color: rgba(0, 0, 0, 0.7);
+      background-color: rgba(0, 0, 0, 1);
       margin-left: 0;
     }
 
@@ -182,10 +142,6 @@ const styles = `
       padding-left :0;
     }
 
-    .menu-links.active .theme-icon {
-      margin-top: 10px;
-    }
-
     .menu-icon {
       position: absolute;
       right: 20px;
@@ -193,7 +149,7 @@ const styles = `
   }
 
   @media (max-width: 585px) {
-    .menu-icon, .theme-icon {
+    .menu-icon {
       font-size: 20px !important;
     }
 
@@ -205,17 +161,6 @@ const styles = `
     .text-2xl {
       font-size: 1.25rem !important;
     }
-  }
-
-  .menu {
-    --bg-menu-links-light: #f0f0f0;
-    --bg-menu-links-dark: #262a36;
-    --bg-menu-links: var(--bg-menu-links-light);
-    width: 100%;
-  }
-
-  .dark .menu {
-    --bg-menu-links: var(--bg-menu-links-dark);
   }
 `;
 
