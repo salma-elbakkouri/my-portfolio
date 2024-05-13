@@ -131,6 +131,7 @@ const styles = `
     .menu-links.active {
       background-color: rgba(0, 0, 0, 1);
       margin-left: 0;
+      margin-right: 80px;
     }
 
     .menu-links.active .menu-link {
@@ -140,6 +141,7 @@ const styles = `
       color : white;
       margin-left : 0;
       padding-left :0;
+      
     }
 
     .menu-icon {

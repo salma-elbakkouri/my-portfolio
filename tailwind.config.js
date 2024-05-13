@@ -39,6 +39,7 @@ module.exports = {
           lightGray: '#f0f0f0',
           midGray: '#d1d1d1',
           darkGray: '#666666',
+          blackDark : '#141414',
         },
         backgroundImage: {
           'light-gradient': 'linear-gradient(to bottom, #f0f0f0, #d1d1d1)',

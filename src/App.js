@@ -5,6 +5,8 @@ import About from './components/about';
 import BackgroundParticles from './components/BackgroundParticles';
 import ThemeSwitcher from './components/ThemeSwitcher';
 import Projects from './components/projects';
+import Skills from './components/skills';
+import Experience from './components/experience';
 
 function App() {
     return (
@@ -16,6 +18,8 @@ function App() {
                 <Home />
                 <About />
                 <Projects/>
+                <Skills/>
+                <Experience/>
                 {/* <Services /> */}
             </div>
         </div>

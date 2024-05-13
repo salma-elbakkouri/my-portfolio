@@ -1,5 +1,4 @@
 import React from 'react';
-import laptopImagePng from '../assets/laptoppng.png';
 
 const About = () => {
     const styles = {
@@ -52,10 +51,11 @@ const About = () => {
             color: '#ff413d',
         },
         aboutTextH3: {
+            fontWeight : '500',
             fontSize: 'clamp(18px, 4vw, 40px)',
             marginBottom: '5px',
             marginTop: '0',
-            color: '#FFFFFF',
+            color: '#fff',
         },
         aboutTextP: {
             color: '#FFFFFF',
