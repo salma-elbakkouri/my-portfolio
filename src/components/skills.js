@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faReact, faAngular, faJsSquare, faNodeJs, faHtml5, faCss3Alt,
-    faBootstrap, faSass, faGithub, faWordpress, faAndroid, faPhp,
+    faBootstrap, faSass, faWordpress, faAndroid,
     faNpm, faUbuntu
 } from '@fortawesome/free-brands-svg-icons';
 import { ReactComponent as FigmaSvg } from '../assets/figma.svg';

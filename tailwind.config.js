@@ -40,6 +40,11 @@ module.exports = {
           midGray: '#d1d1d1',
           darkGray: '#666666',
           blackDark : '#141414',
+          grayBlue : '#C5C9DC',
+          yellow : '#A7A700',
+          lightBlue : '#82aceb',
+          darkBlue : '#14232c',
+          veryDark : '#0C161C'
         },
         backgroundImage: {
           'light-gradient': 'linear-gradient(to bottom, #f0f0f0, #d1d1d1)',
