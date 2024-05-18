@@ -104,10 +104,8 @@ const About = () => {
                 <div style={{ ...styles.aboutText, ...(isSmallScreen && styles.smallScreenText) }}>
                     <h3 style={styles.aboutTextH3}>WHO I AM?</h3>
                     <p style={styles.aboutTextP}>
-                        I'm an Android apps developer proficient in Java, React Native, and Flutter.
-                        Additionally, I excel in web development with JavaScript, React, and CSS frameworks
-                        like Tailwind, Bootstrap, and Sass. My focus is on creating seamless user experiences
-                        across platforms.
+                    I specialize in front-end web and mobile development, prioritizing a mobile-first approach. Proficient in JavaScript frameworks like React and Next.js, I create dynamic web applications. For mobile, I excel in React Native and Java for Android apps. I also have expertise in CSS frameworks like Tailwind and Bootstrap.
+My goal is to create tech solutions that enhance user experiences, making them intuitive and engaging.
                     </p>
                     <button style={styles.aboutTextButton}>Download My Resume</button>
                 </div>

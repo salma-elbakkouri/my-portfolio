@@ -140,6 +140,7 @@ const styles = `
       text-align: center;
       color : white;
       margin-left : 0;
+      margin:0;
       padding-left :0;
       
     }

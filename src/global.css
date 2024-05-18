@@ -4,6 +4,8 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import '@aeternity/aepp-components/dist/common.css';
+
 
 * {
     margin: 0;
@@ -84,4 +86,21 @@ canvas {
     z-index: 0;  
 }
 
-/* gradient colors for special skill icons */
+/* footer css  */
+
+.footer {
+    width: 100%; 
+  }
+
+  .back-to-top {
+    position: absolute;
+    bottom : 30px;  
+    right: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+  }
+  
+  .back-to-top:hover {
+    background-color: #d3d3d30a;
+  }

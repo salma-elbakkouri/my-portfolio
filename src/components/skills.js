@@ -14,7 +14,7 @@ import { ReactComponent as CsharpSvg } from '../assets/csharp.svg';
 
 const Skills = () => {
     const skills = [
-        { id: 'react', name: 'React', icon: faReact, color: '#61DAFB' },
+        { id: 'react', name: 'React', icon: faReact, color: '#61DAFB' , },
         { id: 'angular', name: 'Angular', icon: faAngular, color: '#DD0031' },
         { id: 'javascript', name: 'JavaScript', icon: faJsSquare, color: '#F7DF1E' },
         { id: 'nodejs', name: 'Node.js', icon: faNodeJs, color: '#339933' },

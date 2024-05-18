@@ -7,6 +7,9 @@ import ThemeSwitcher from './components/ThemeSwitcher';
 import Projects from './components/projects';
 import Skills from './components/skills';
 import Experience from './components/experience';
+import '@aeternity/aepp-components/dist/common.css';
+import Footer from './components/footer';
+
 
 function App() {
     return (
@@ -20,8 +23,7 @@ function App() {
                 <Projects/>
                 <Skills/>
                 <Experience/>
-                
-                {/* <Services /> */}
+                <Footer/>
             </div>
         </div>
     );
