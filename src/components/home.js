@@ -61,7 +61,7 @@ const Home = () => {
     return (
         <div style={styles.home}>
             <h1 style={styles.profileInfoH1}>Hi, I'm Salma</h1>
-            <h1 style={styles.profileInfoH1}>A Fullstack Developer</h1>
+            <h1 style={styles.profileInfoH1}>A Frontend Developer</h1>
             <p style={styles.profileInfoP}>Mobile & Web Applications Development</p>
             {/* <button style={styles.profileInfoButton}>Contact Me</button> */}
 

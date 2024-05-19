@@ -16,7 +16,7 @@ const Footer = () => {
                 <a href="https://www.linkedin.com/in/salma-el-bakkouri-b6a848283/" target='_blank'><FaLinkedin size="1.5em" /></a>
                 <a href="mailto:elbakkourisalmaa@gmail.com" target='_blank'><FaEnvelope size="1.5em" /></a>
             </div>
-            <div className="footer__contact text-sm sm:text-lg opacity-50 flex justify-center mb-10">
+            <div className="footer__contact text-sm sm:text-lg opacity-50 flex justify-center mb-20">
                 <h4>@2024 Copyrights Salma Elbakkouri</h4>
             </div>
             <button className="back-to-top" onClick={scrollToTop}>

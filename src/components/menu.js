@@ -29,9 +29,7 @@ const Menu = () => {
 
       {/* Centered Menu Links */}
       <div
-        className={`menu-links flex items-center space-x-8 pt-7 ${isMenuVisible ? 'active' : ''} ${
-          isSmallScreen ? 'hidden md:flex' : ''
-        }`}
+        className={`menu-links flex items-center ${!isSmallScreen ? 'space-x-8' : ''} pt-7 ${isMenuVisible ? 'active' : ''} ${isSmallScreen ? 'hidden md:flex' : ''}`}
       >
         <a></a>
         <a
@@ -96,13 +94,22 @@ const styles = `
     top: 60px;
     left: 0;
     width: 100%;
-    padding: 20px 0;
     visibility: visible;
     justify-content: center;
     align-items: center;
     z-index: 9;
     background-color: rgba(0, 0, 0, 1);
     height: calc(100vh - 60px);
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu-links.active .menu-link {
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    margin: 0;
   }
 
   .menu-link {
@@ -117,12 +124,9 @@ const styles = `
     .menu {
       position: relative;
       height: 60px;
-      width: 100% !important;
     }
 
     .menu-links {
-      margin: 0;
-      padding: 0 ;
       visibility: hidden;
       display: none;
       font-size: 15px;
@@ -130,19 +134,13 @@ const styles = `
 
     .menu-links.active {
       background-color: rgba(0, 0, 0, 1);
-      margin-left: 0;
-      margin-right: 80px;
     }
 
     .menu-links.active .menu-link {
       padding: 15px 0;
       width: 100%;
       text-align: center;
-      color : white;
-      margin-left : 0;
-      margin:0;
-      padding-left :0;
-      
+      color: white;
     }
 
     .menu-icon {
@@ -157,7 +155,6 @@ const styles = `
     }
 
     .menu {
-      width: 100% !important;
       padding: 5px;
     }
 

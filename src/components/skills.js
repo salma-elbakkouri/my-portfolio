@@ -39,7 +39,7 @@ const Skills = () => {
             <h2 style={{ color: 'white', fontSize: '25px', fontWeight: '500', paddingTop: '80px' }}>My Skills</h2>
             <div className="flex flex-row flex-wrap justify-center items-center gap-10 p-10">
                 {skills.map(skill => (
-                    <div key={skill.id} className="flex flex-col items-center justify-center w-40 h-40 cursor-pointer">
+                    <div key={skill.id} className="flex flex-col items-center justify-center w-40 h-40 ">
                         {skill.icon ? (
                             <FontAwesomeIcon icon={skill.icon} size="3x" style={{ marginBottom: '10px', color: skill.color }} />
                         ) : (
