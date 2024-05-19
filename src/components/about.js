@@ -235,7 +235,7 @@ const About = () => {
             padding: '0',
         },
         smallScreenButton: {
-            backgroundColor: '#152c3a',
+            backgroundColor: '#254253',
         },
     };
 
@@ -246,7 +246,6 @@ const About = () => {
 
     const isSmallScreen = window.innerWidth <= 768;
 
-    const isSmallerScreen = window.innerWidth <= 630;
 
     return (
         <div id="about" style={styles.about} ref={ref}>
@@ -260,7 +259,7 @@ const About = () => {
                     <button
                         style={{
                             ...styles.aboutTextButton,
-                            ...(isSmallerScreen && styles.smallScreenButton),
+                            ...(isSmallScreen && styles.smallScreenButton),
                         }}
                     >
                         Download My Resume

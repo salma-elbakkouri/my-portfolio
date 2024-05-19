@@ -19,14 +19,24 @@ html, body {
     padding: 0;
 }
 
+/* Default background for larger screens */
 body {
     position: relative; /* Needed for positioning the pseudo-element */
-    background-image: url('./assets/bg15.jpg');
+    background-image: url('./assets/bgweb.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     color: black;
 }
+
+/* Background for mobile devices */
+@media (max-width: 768px) {
+    body {
+        background-color: #01121a; /* Fallback color */
+        background-image: none;
+    }
+}
+
 
 body::before {
     content: ''; /* Necessary for the pseudo-element to show */
@@ -98,6 +108,7 @@ canvas {
     right: 40px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    background-color: transparent   ;
     
   }
   

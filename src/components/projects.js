@@ -43,28 +43,28 @@ const Projects = () => {
             image: lifereminder,
             githubLink: 'https://github.com/salma-elbakkouri/calendar-WebApp',
         },
-        // {
-        //     id: 5,
-        //     title: 'myPharmacy mobile app',
-        //     description: 'An Android application designed to simplify the search for nearby pharmacies open during off-hours, featuring an admin side for pharmacy authenticity validation',
-        //     technologies: ['Java', 'Android', 'xml' , 'firebase' , 'OpenStreetMap API'],
-        //     image: pharmacy,
-        //     githubLink: 'https://github.com/salma-elbakkouri/Pharmacy-App-client',
-        // },
-        // {
-        //     id: 6,
-        //     title: 'CountriesExplorer mobile app',
-        //     description: 'a simple ios application that showcases continents, countries and cities with their description & photos',
-        //     technologies: ['Swift','UIKit'],
-        //     image: countries,
-        //     githubLink: 'https://github.com/salma-elbakkouri/countries-swift-App',
-        // },
+        {
+            id: 5,
+            title: 'myPharmacy mobile app',
+            description: 'An Android application designed to simplify the search for nearby pharmacies open during off-hours, featuring an admin side for pharmacy authenticity validation',
+            technologies: ['Java', 'Android', 'xml' , 'firebase' , 'OpenStreetMap API'],
+            image: pharmacy,
+            githubLink: 'https://github.com/salma-elbakkouri/Pharmacy-App-client',
+        },
+        {
+            id: 6,
+            title: 'CountriesExplorer mobile app',
+            description: 'a simple ios application that showcases continents, countries and cities with their description & photos',
+            technologies: ['Swift','UIKit'],
+            image: countries,
+            githubLink: 'https://github.com/salma-elbakkouri/countries-swift-App',
+        },
     ];
 
     return (
         <div id='projects' className='flex flex-col items-center justify-center'>
        <h2 style={{ color: 'white', fontSize: '25px'  , fontWeight : '500' , paddingTop:'80px'}}>My Projects</h2>
-       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-10 sm:gap-20 md:gap-20 p-10 sm:p-20 md:p-20 ">
+       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 sm:gap-10 md:gap-20 p-10 sm:p-20 md:p-20 ">
             {projects.map(project => (
                 <div key={project.id} className="relative text-md overflow-hidden rounded-xl shadow-md transition duration-300 ease-in-out transform hover:shadow-xl hover:-translate-y-3 bg-gray-500 bg-opacity-50 cursor-pointer mb-20">
                     <img src={project.image} alt={project.title} className="w-full h-100 object-cover" />
