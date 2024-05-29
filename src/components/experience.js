@@ -6,20 +6,27 @@ import { data } from 'autoprefixer';
 const experiences = [
     {
         id: 1,
-        date: 'Apr 2024 - Present',
-        title: 'Fullstack Developer',
-        company: 'Aymd Agency · Internship',
-        description: 'I am currently working an an ecommerce website using WordPress and in the same time developing a waiting line management system for hospitals in React & node js',
+        date: 'May 2024 - Present',
+        title: 'Support IT Consultant',
+        company: 'Alten Fes · Internship',
+        description: 'Actively engaged as a Supoort IT consultant at ALTEN DELIVERY CENTER MAROC, I handle IT support duties, addressing user issues and delivering effective solutions to ensure smooth operations',
     },
     {
         id: 2,
+        date: 'Apr 2024 - Present',
+        title: 'Fullstack Developer',
+        company: 'Aymd Agency · Internship',
+        description: 'Currently developing a health assistant app utilizing artificial intelligence, built on React Native and Laravel, to streamline patient-doctor interactions and healthcare management',
+    },
+    {
+        id: 3,
         date: 'May 2022 · Jun 2022',
         title: 'Mobile Developer',
         company: 'Mercure I&S · Internship',
         description: 'I developed an Android app to locate on-duty pharmacies based on user location, utilizing Android, Java, XML, and Firebase',
     },
     {
-        id: 3,
+        id: 4,
         date: 'Jun 2021 - July 2021',
         title: 'Wordpress Developer',
         company: 'Mercure I&S · Internship',

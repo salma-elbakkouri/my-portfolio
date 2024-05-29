@@ -37,7 +37,7 @@ const Skills = () => {
     return (
         <div style={{ minHeight: '100vh' }} id='skills' className='flex flex-col items-center justify-center'>
             <h2 style={{ color: 'white', fontSize: '25px', fontWeight: '500', paddingTop: '80px' }}>My Skills</h2>
-            <div className="flex flex-row flex-wrap justify-center items-center gap-10 p-10">
+            <div className="flex flex-row flex-wrap justify-center items-center gap-10 p-20">
                 {skills.map(skill => (
                     <div key={skill.id} className="flex flex-col items-center justify-center w-40 h-40 ">
                         {skill.icon ? (

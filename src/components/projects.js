@@ -66,7 +66,7 @@ const Projects = () => {
        <h2 style={{ color: 'white', fontSize: '25px'  , fontWeight : '500' , paddingTop:'80px'}}>My Projects</h2>
        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 sm:gap-10 md:gap-20 p-10 sm:p-20 md:p-20 ">
             {projects.map(project => (
-                <div key={project.id} className="relative text-md overflow-hidden rounded-xl shadow-md transition duration-300 ease-in-out transform hover:shadow-xl hover:-translate-y-3 bg-gray-500 bg-opacity-50 cursor-pointer mb-20">
+                <div key={project.id} className="relative text-md overflow-hidden rounded-xl shadow-md transition duration-300 ease-in-out transform hover:shadow-xl hover:-translate-y-3 bg-gray-500 bg-opacity-70 cursor-pointer mb-20">
                     <img src={project.image} alt={project.title} className="w-full h-100 object-cover" />
                     <div className="p-4">
                         <h3 className="text-2xl font-semibold mb-2 text-white">{project.title}</h3>
