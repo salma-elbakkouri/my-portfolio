@@ -22,7 +22,7 @@ const Menu = () => {
     <div className="menu flex justify-between items-center px-5 py-4 relative z-10 w-full">
       {/* Left Logo */}
       <div className="flex items-center">
-        <div className="text-2xl font-semibold pl-2" style={{ color: '#FFFFFF' }}>
+        <div className="text-xl font-semibold pl-2" style={{ color: '#FFFFFF' }}>
           Portfolio
         </div>
       </div>
@@ -84,7 +84,7 @@ const styles = `
 
   .menu-icon {
     display: inline-block !important;
-    font-size: 25px;
+    font-size: 20px;
   }
 
   .menu-links.active {
@@ -105,7 +105,7 @@ const styles = `
   }
 
   .menu-links.active .menu-link {
-    padding: 15px 0;
+    padding: 10px 0;
     width: 100%;
     text-align: center;
     color: white;
@@ -113,8 +113,8 @@ const styles = `
   }
 
   .menu-link {
-    font-size: 22px;
-    padding: 10px 0;
+    font-size: 16px;
+    padding: 8px 0;
     width: 100%;
     text-align: center;
     color: white;
@@ -129,7 +129,7 @@ const styles = `
     .menu-links {
       visibility: hidden;
       display: none;
-      font-size: 15px;
+      font-size: 14px;
     }
 
     .menu-links.active {
@@ -137,7 +137,7 @@ const styles = `
     }
 
     .menu-links.active .menu-link {
-      padding: 15px 0;
+      padding: 10px 0;
       width: 100%;
       text-align: center;
       color: white;
@@ -151,15 +151,15 @@ const styles = `
 
   @media (max-width: 585px) {
     .menu-icon {
-      font-size: 20px !important;
+      font-size: 18px !important;
     }
 
     .menu {
       padding: 5px;
     }
 
-    .text-2xl {
-      font-size: 1.25rem !important;
+    .text-xl {
+      font-size: 1rem !important;
     }
   }
 `;

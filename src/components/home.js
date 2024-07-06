@@ -1,9 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-
 
 const Home = () => {
     const styles = {
@@ -18,7 +13,7 @@ const Home = () => {
             minHeight: '80vh',
         },
         profileInfoH1: {
-            fontSize: 'clamp(30px, 6vw, 70px)',
+            fontSize: 'clamp(16px, 4vw, 40px)',
             fontWeight: 600,
             textAlign: 'center',
             color: '#FFFFFF',
@@ -27,23 +22,27 @@ const Home = () => {
             textAlign: 'center',
             lineHeight: 1.7,
             color: '#FFFFFF',
-            fontSize: 'clamp(16px, 4vw, 24px)',
+            fontSize: 'clamp(10px, 2.5vw, 16px)',
             marginTop: 0,
             marginBottom: '20px',
             width: '80%',
             maxWidth: '500px',
         },
         profileInfoButton: {
-            fontSize: 'clamp(14px, 2vw, 18px)',
-            padding: 'clamp(10px, 3vw, 17px) clamp(20px, 8vw, 40px)',
+            fontSize: 'clamp(10px, 1.2vw, 14px)',
+            padding: 'clamp(6px, 2vw, 12px) clamp(14px, 5vw, 28px)',
             color: '#FFFFFF',
-            backgroundColor: '#011721',
             border: 'none',
             borderRadius: '35px',
-            boxShadow: '0 5px 15px rgba(64, 70, 88, 0.5)',
             cursor: 'pointer',
+            margin: '10px',
         },
-        
+        hireMeButton: {
+            backgroundColor: '#436BA8',
+        },
+        downloadCvButton: {
+            backgroundColor: '#343840',
+        },
     };
 
     const openGithub = () => {
@@ -60,36 +59,13 @@ const Home = () => {
 
     return (
         <div style={styles.home}>
-            <h1 style={styles.profileInfoH1}>Hi, I'm Salma</h1>
-            <h1 style={styles.profileInfoH1}>A Frontend Developer</h1>
-            <p style={styles.profileInfoP}>Mobile & Web Applications Development</p>
-            {/* <button style={styles.profileInfoButton}>Contact Me</button> */}
-
-            <div className="icon-container flex justify-center items-center gap-4"> {/* Flex container with padding and gap */}
-                <FontAwesomeIcon
-                    icon={faGithub}
-                    className="cursor-pointer text-white" 
-                    style={{ fontSize: '30px' }} 
-                    href='https://github.com/salma-elbakkouri'
-                    onClick={openGithub}
-                />
-                <FontAwesomeIcon
-                    icon={faLinkedin}
-                    className="cursor-pointer text-white"
-                    style={{ fontSize: '30px' }}
-                    onClick={openLinkedin}
-                />
-                <FontAwesomeIcon
-                    icon={faEnvelope}
-                    className="cursor-pointer text-white"
-                    style={{ fontSize: '30px' }}
-                    onClick={openGmail}
-                />
+            <h1 style={styles.profileInfoH1}>SALMA EL BAKKOURI</h1>
+            <p style={styles.profileInfoP}>Specialized in Web & Mobile Development</p>
+            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                <button style={{ ...styles.profileInfoButton, ...styles.hireMeButton }}>Hire Me</button>
+                <button style={{ ...styles.profileInfoButton, ...styles.downloadCvButton }}>Download CV</button>
             </div>
-
         </div>
-
-        
     );
 };
 

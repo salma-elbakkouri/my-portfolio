@@ -22,7 +22,8 @@ html, body {
 /* Default background for larger screens */
 body {
     position: relative; /* Needed for positioning the pseudo-element */
-    background-image: url('./assets/bgweb.jpg');
+    /* background-image: url('./assets/bgweb.jpg'); */
+    background-color: #222831;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
