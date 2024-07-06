@@ -1,9 +1,6 @@
-
-
-
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import resume from '../assets/Salma EL BAKKOURI.pdf'; 
+import resume from '../assets/Salma EL BAKKOURI.pdf';
 
 const About = () => {
     const styles = {
@@ -21,8 +18,7 @@ const About = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            flexDirection: 'row',
-            flexWrap: 'wrap',
+            flexDirection: 'column',
             width: '90%',
             maxWidth: '900px',
             zIndex: 1,
@@ -34,80 +30,29 @@ const About = () => {
         aboutContentVisible: {
             opacity: 1,
             transform: 'translateY(0)',
-        },
-        aboutImage: {
-            flex: '1 1 300px',
-            textAlign: 'center',
-            position: 'relative',
-        },
-        aboutImageImg: {
-            borderRadius: '50%',
-            width: 'clamp(150px, 30vw, 300px)',
-            height: 'clamp(150px, 30vw, 300px)',
-            objectFit: 'cover',
-            padding: '0',
+            maxWidth:'700px',
         },
         aboutText: {
-            flex: '1 1 500px',
-            textAlign: 'left',
+            textAlign: 'justify',
             padding: '0 20px',
-        },
-        aboutTextSpan: {
-            color: '#ff413d',
-            fontSize: 'clamp(14px, 2vw, 22px)',
-        },
-        aboutTextH2: {
-            fontSize: 'clamp(16px, 3vw, 22px)',
-            marginBottom: '5px',
-            marginTop: '0',
-            color: '#ff413d',
+            color: '#FFFFFF',
         },
         aboutTextH3: {
             fontWeight: '500',
-            fontSize: 'clamp(18px, 4vw, 40px)',
+            fontSize: 'clamp(14px, 3vw, 30px)',
             marginBottom: '5px',
             marginTop: '0',
-            color: '#fff',
+            textAlign: 'center',
         },
         aboutTextP: {
-            color: '#FFFFFF',
-            lineHeight: 1.5,
+            lineHeight: 1.8,
             marginTop: '10px',
             marginBottom: '0',
-            fontSize: 'clamp(14px, 2vw, 22px)',
-        },
-        aboutTextButton: {
-            padding: 'clamp(8px, 1.5vw, 13px) clamp(20px, 3vw, 45px)',
-            color: '#fff',
-            backgroundColor: '#01121a',
-            border: 'none',
-            borderRadius: '35px',
-            boxShadow: '0 5px 15px rgba(64, 70, 88, 0.5)',
-            cursor: 'pointer',
-            fontSize: 'clamp(12px, 2vw, 18px)',
-            marginTop: '20px',
-            position: 'relative',
-            zIndex: 2,
+            fontSize: 'clamp(14px, 2vw, 20px)',
+            textAlign: 'center',
         },
         smallScreenContent: {
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '20px',
-            width: '90%',
             maxWidth: '500px',
-        },
-        smallScreenImageImg: {
-            marginTop: '40px',
-            width: 'clamp(100px, 40vw, 250px)',
-            height: 'clamp(100px, 40vw, 250px)',
-        },
-        smallScreenText: {
-            textAlign: 'center',
-            padding: '0',
-        },
-        smallScreenButton: {
-            backgroundColor: '#254253',
         },
     };
 
@@ -118,33 +63,14 @@ const About = () => {
 
     const isSmallScreen = window.innerWidth <= 768;
 
-
-    const handleDownload = () => {
-        const link = document.createElement('a');
-        link.href = resume;
-        link.download = 'Salma EL BAKKOURI.pdf';
-        link.click();
-    };
-
-
     return (
         <div id="about" style={styles.about} ref={ref}>
             <div style={{ ...styles.aboutContent, ...(inView && styles.aboutContentVisible), ...(isSmallScreen && styles.smallScreenContent) }}>
-                <div style={{ ...styles.aboutText, ...(isSmallScreen && styles.smallScreenText) }}>
-                    <h3 style={styles.aboutTextH3}>WHO I AM?</h3>
+                <div style={styles.aboutText}>
+                    <h3 style={styles.aboutTextH3}>ABOUT ME</h3>
                     <p style={styles.aboutTextP}>
-                        I specialize in front-end web and mobile development, prioritizing a mobile-first approach. Proficient in JavaScript frameworks like React and Next.js, I create dynamic web applications. For mobile, I excel in React Native and Java for Android apps. I also have expertise in CSS frameworks like Tailwind and Bootstrap.
-                        My goal is to create tech solutions that enhance user experiences, making them intuitive and engaging.
+                        I specialize in front-end web and mobile development, prioritizing a mobile-first approach. Proficient in JavaScript frameworks like React and Next.js, I create dynamic web applications. For mobile, I excel in React Native and Java for Android apps. I also have expertise in CSS frameworks like Tailwind and Bootstrap. My goal is to create tech solutions that enhance user experiences, making them intuitive and engaging.
                     </p>
-                    <button
-                        style={{
-                            ...styles.aboutTextButton,
-                            ...(isSmallScreen && styles.smallScreenButton),
-                        }}
-                        onClick={handleDownload}
-                    >
-                        Download My Resume
-                    </button>
                 </div>
             </div>
         </div>

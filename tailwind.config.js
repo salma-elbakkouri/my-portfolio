@@ -44,7 +44,9 @@ module.exports = {
           yellow : '#A7A700',
           lightBlue : '#82aceb',
           darkBlue : '#14232c',
-          veryDark : '#0C161C'
+          veryDark : '#0C161C',
+          cardColor : '#343840',
+          cardSelectedColor : '#436BA8',
         },
         backgroundImage: {
           'light-gradient': 'linear-gradient(to bottom, #f0f0f0, #d1d1d1)',
