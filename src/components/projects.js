@@ -97,9 +97,9 @@ const Projects = () => {
                         className={`px-4 py-2 rounded-full text-sm font-medium transition ${
                             selectedCategory === category
                                 ? 'bg-cardSelectedColor text-white shadow-md'
-                                : 'bg-cardColor text-white'
+                                : 'bg-cardColor text-white bg-opacity-70'
                         }`}
-                        style={{ boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)', borderRadius: '55px', minWidth: '100px', height: '40px' }}
+                        style={{ boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)', borderRadius: '55px', minWidth: '120px', height: '40px' }}
                     >
                         {category}
                     </button>
@@ -115,10 +115,10 @@ const Projects = () => {
                     {filteredProjects.slice(currentSlide, currentSlide + 3).map(project => (
                         <div
                             key={project.id}
-                            className="flex-none w-96 h-72 rounded-lg shadow-lg bg-cardColor bg-opacity-60"
-                            style={{ margin: '0 20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                            className="flex-none w-96 h-72 rounded-lg"
+                            style={{ margin: '0 30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                         >
-                            <img src={project.image} alt={project.title} className="w-full h-full object-contain p-7 rounded-xl" />
+                            <img src={project.image} alt={project.title} className="w-full  rounded-[8px] cursor-pointer" />
                         </div>
                     ))}
                 </div>
