@@ -7,18 +7,18 @@ import mercure from '../assets/mercure.png'; // Import the image
 const experiences = [
     {
         id: 1,
-        date: 'May 2024 - Present',
+        date: 'May 2024 - August 2024',
         title: 'Support IT Consultant',
         company: 'Alten Fes · Internship',
-        description: 'Actively engaged as a Support IT consultant at ALTEN DELIVERY CENTER MAROC, I handle IT support duties, addressing user issues and delivering effective solutions to ensure smooth operations',
+        description: 'A 3-month summer internship at Alten Delivery Center Maroc, where I had the chance to visualize and analyze how IT support works, addressing user issues and delivering effective solutions to ensure smooth operations, and then I started practicing these skills',
         image: alten,
     },
     {
         id: 2,
-        date: 'Apr 2024 - Present',
+        date: 'Apr 2024 - June 2024',
         title: 'Fullstack Developer',
         company: 'Aymd Agency · Internship',
-        description: 'Currently developing a health assistant app utilizing artificial intelligence, built on React Native and Laravel, to streamline patient-doctor interactions and healthcare management',
+        description: 'A 2-month hybrid internship at Aymd, a digital marketing agency, where I multitasked on creating visual designs, developed a patient management web application, a simple contact website with QR codes, and a health assistant app featuring a health chatbot and medication reminders',
         image: aymd,
     },
     {
@@ -26,7 +26,7 @@ const experiences = [
         date: 'May 2022 · Jun 2022',
         title: 'Mobile Developer',
         company: 'Mercure I&S · Internship',
-        description: 'I developed an Android app to locate on-duty pharmacies based on user location, utilizing Android, Java, XML, and Firebase',
+        description: 'A 2-month internship where I developed an Android app to locate on-duty pharmacies based on user location, with an admin side to verify and add pharmacies, utilizing Android, Java, XML, and Firebase.',
         image: mercure,
     },
     {
@@ -34,7 +34,7 @@ const experiences = [
         date: 'Jun 2021 - July 2021',
         title: 'Wordpress Developer',
         company: 'Mercure I&S · Internship',
-        description: 'I developed a web portal for an agricultural site using WordPress, Elementor, CSS, and Bootstrap',
+        description: 'A 1-month initialization and observation internship where I had small tasks using WordPress and had the chance to create a web portal for an agricultural site using WordPress, Elementor, Bootstrap, and CSS',
         image: mercure,
     },
 ];
@@ -42,7 +42,7 @@ const experiences = [
 const Experience = () => {
     return (
         <div style={{ minHeight: '100vh' }} id='experience' className='flex flex-col items-center justify-center relative'>
-            <h2 style={{ color: 'white', fontSize: '25px', fontWeight: '500', paddingTop: '120px' , marginBottom:'60px'}}>My Experience</h2>
+            <h2 style={{ color: 'white', fontSize: '25px', fontWeight: '500', paddingTop: '120px' , marginBottom:'60px'}}></h2>
             <div className="flex flex-col justify-center items-center gap-40 p-10 w-full max-w-6xl">
                 {experiences.map((exp, index) => (
                     <div key={exp.id} className={`flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center w-full gap-16`}>

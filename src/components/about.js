@@ -49,7 +49,7 @@ const About = () => {
             marginTop: '10px',
             marginBottom: '0',
             fontSize: 'clamp(14px, 2vw, 20px)',
-            textAlign: 'center',
+            textAlign: 'justify',
         },
         smallScreenContent: {
             maxWidth: '500px',
@@ -69,8 +69,8 @@ const About = () => {
                 <div style={styles.aboutText}>
                     <h3 style={styles.aboutTextH3}>ABOUT ME</h3>
                     <p style={styles.aboutTextP}>
-                        I specialize in front-end web and mobile development, prioritizing a mobile-first approach. Proficient in JavaScript frameworks like React and Next.js, I create dynamic web applications. For mobile, I excel in React Native and Java for Android apps. I also have expertise in CSS frameworks like Tailwind and Bootstrap. My goal is to create tech solutions that enhance user experiences, making them intuitive and engaging.
-                    </p>
+                    I'm a 21-year-old passionate mobile apps developer with a knack for web development, specializing in Android apps using Java, React Native, and Flutter. With a strong foundation in JavaScript, React, CSS, and its famous frameworks like Tailwind CSS and Bootstrap, I'm very creative and love to create aesthetic tech solutions that come to life 
+                     </p>
                 </div>
             </div>
         </div>

@@ -88,7 +88,7 @@ const Projects = () => {
     return (
         <div id="projects" className="flex flex-col items-center justify-center px-10 min-h-screen">
             <h2 style={{ color: '#FFFFFF', fontSize: '35px', fontWeight: '500', paddingTop: '80px' }}>
-                My <span style={{ color: '#FFFFFF' }}>Recent Works</span>
+                <span style={{ color: '#FFFFFF' }}>Recent Works</span>
             </h2>
             <div className="flex space-x-4 my-4">
                 {categories.map(category => (

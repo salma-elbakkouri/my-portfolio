@@ -40,7 +40,7 @@ const Skills = () => {
     return (
         <div style={{ minHeight: '100vh', maxWidth: '800px', margin: '0 auto' }} id='skills' className='flex flex-col items-center justify-center'>
             <h2 style={{ color: 'white', fontSize: '25px', fontWeight: '500', paddingTop: '150px', marginBottom: '30px', textAlign: 'center' }}>
-                - You can count on me if the project involves -
+                - You Can Count On Me If The Project Involves -
             </h2>
             
             <div className="flex flex-row flex-wrap justify-center items-center gap-8 p-5">

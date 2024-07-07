@@ -10,17 +10,17 @@ const Footer = () => {
     };
 
     return (
-        <footer className="footer flex-col text-white text-lg sm:text-2xl justify-center items-center p-4 sm:p-20 relative mt-20">
-            <div className="footer__icons flex gap-4 sm:gap-6 mb-2 sm:mb-4 justify-center">
-                <a href="https://github.com/salma-elbakkouri" target='_blank'><FaGithub size="1.5em" /></a>
-                <a href="https://www.linkedin.com/in/salma-el-bakkouri-b6a848283/" target='_blank'><FaLinkedin size="1.5em" /></a>
-                <a href="mailto:elbakkourisalmaa@gmail.com" target='_blank'><FaEnvelope size="1.5em" /></a>
+        <footer className="footer flex-col text-white text-sm sm:text-base justify-center items-center p-4 sm:p-10 relative mt-80">
+            <div className="footer__icons flex gap-3 sm:gap-4 mb-2 sm:mb-3 justify-center">
+                <a href="https://github.com/salma-elbakkouri" target='_blank' className="text-white hover:text-gray-300"><FaGithub size="1.5em" /></a>
+                <a href="https://www.linkedin.com/in/salma-el-bakkouri-b6a848283/" target='_blank' className="text-white hover:text-gray-300"><FaLinkedin size="1.5em" /></a>
+                <a href="mailto:elbakkourisalmaa@gmail.com" target='_blank' className="text-white hover:text-gray-300"><FaEnvelope size="1.5em" /></a>
             </div>
-            <div className="footer__contact text-sm sm:text-lg opacity-50 flex justify-center mb-20">
-                <h4>@2024 Copyrights Salma Elbakkouri</h4>
+            <div className="footer__contact text-xs sm:text-sm opacity-50 flex justify-center ">
+                <h4>&copy; 2024 Salma Elbakkouri. All Rights Reserved.</h4>
             </div>
             <button className="back-to-top" onClick={scrollToTop}>
-                <FaArrowUp size="1.2em" />
+                <FaArrowUp size="1em" />
             </button>
         </footer>
     );
