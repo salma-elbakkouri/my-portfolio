@@ -1,3 +1,5 @@
+
+
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
@@ -11,6 +13,8 @@ import uilifereminder from '../assets/ui-lifereminder.png';
 import healthmate from '../assets/healthmate.png';
 import arbouniPatientMngt from '../assets/admin-dashboard.png';
 import arbouniMngtUI from '../assets/arbouni-mngt-ui.png'; // New image import
+import uiaymd from '../assets/aymd-ui.png';
+import aymdpic from '../assets/aymdbigview.png';
 
 const Projects = () => {
     const [selectedCategory, setSelectedCategory] = useState('All');
@@ -74,6 +78,15 @@ const Projects = () => {
         },
         {
             id: 7,
+            title: 'UI Aymd Agency',
+            description: 'A Figma UI design for the Aymd website, focusing on intuitive and user-friendly interfaces',
+            technologies: ['Figma'],
+            image: uiaymd,
+            category: 'UI',
+            githubLink: 'https://www.figma.com/file/xxxxxx/ui-lifereminder-design', // Replace with actual Figma link if available
+        },
+        {
+            id: 8,
             title: 'myPharmacy mobile app',
             description: 'An Android application designed to simplify the search for nearby pharmacies open during off-hours, featuring an admin side for pharmacy authenticity validation',
             technologies: ['Java', 'Android', 'XML', 'Firebase', 'OpenStreetMap API'],
@@ -82,16 +95,16 @@ const Projects = () => {
             githubLink: 'https://github.com/salma-elbakkouri/Pharmacy-App-client',
         },
         {
-            id: 8,
+            id: 9,
             title: 'Arbouni Patient Management web app',
             description: 'A web app for managing patient data for a kinesitherapy center, including features for adding, modifying, deleting patients and users, and visualizing, downloading, and exporting stats and data',
-            technologies: ['ASP.NET', 'C#', 'SQL', 'HTML', 'CSS'],
+            technologies: ['React', 'SQLite', 'tailwind'],
             image: arbouniPatientMngt,
             category: 'Web apps',
             githubLink: 'https://github.com/salma-elbakkouri/Arbouni-Patient-Mngt',
         },
         {
-            id: 9,
+            id: 10,
             title: 'CountriesExplorer mobile app',
             description: 'A simple iOS application that showcases continents, countries and cities with their description & photos',
             technologies: ['Swift', 'UIKit'],
@@ -100,18 +113,26 @@ const Projects = () => {
             githubLink: 'https://github.com/salma-elbakkouri/countries-swift-App',
         },
         {
-            id: 10,
+            id: 11,
             title: 'Arbouni Management UI',
             description: 'UI design for the Arbouni Patient Management system, focusing on clean and efficient user interfaces',
             technologies: ['Figma'],
             image: arbouniMngtUI,
             category: 'UI',
             githubLink: 'https://www.figma.com/file/xxxxxx/arbouni-mngt-ui', // Replace with actual Figma link if available
+        },
+        {
+            id: 12,
+            title: 'Aymd Agency website',
+            description: 'A simple portfolio website for Aymd Agency ',
+            technologies: ['html , css , javascript'],
+            image: aymdpic,
+            category: 'Websites',
+            githubLink: 'https://www.figma.com/file/xxxxxx/arbouni-mngt-ui', // Replace with actual Figma link if available
         }
     ];
 
     const categories = ['All', 'UI',  'Websites', 'Mobile apps', 'Web apps', 'Desktop apps' ];
-
 
     const filteredProjects = selectedCategory === 'All'
         ? projects
@@ -125,6 +146,13 @@ const Projects = () => {
         setCurrentSlide(currentSlide < filteredProjects.length - 1 ? currentSlide + 1 : 0);
     };
 
+
+    const handleCategoryChange = (category) => {
+        setSelectedCategory(category);
+        setCurrentSlide(0); // Reset to the first slide
+    };
+
+    
     return (
         <div id="projects" className="flex flex-col items-center justify-center px-10 min-h-screen">
             <h2 style={{ color: '#FFFFFF', fontSize: '35px', fontWeight: '500', paddingTop: '80px' }}>
@@ -134,7 +162,7 @@ const Projects = () => {
                 {categories.map(category => (
                     <button
                         key={category}
-                        onClick={() => setSelectedCategory(category)}
+                        onClick={() => handleCategoryChange(category)}
                         className={`px-4 py-2 rounded-full text-sm font-medium transition ${
                             selectedCategory === category
                                 ? 'bg-cardSelectedColor text-white shadow-md'
@@ -156,10 +184,20 @@ const Projects = () => {
                     {filteredProjects.slice(currentSlide, currentSlide + 3).map(project => (
                         <div
                             key={project.id}
-                            className="flex-none w-96 h-72 rounded-lg"
+                            className="relative flex-none w-96 h-72 rounded-lg"
                             style={{ margin: '0 30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                         >
                             <img src={project.image} alt={project.title} className="w-full rounded-[8px] cursor-pointer" />
+                            <div className="absolute inset-0 bg-black bg-opacity-70 cursor-pointer opacity-0 hover:opacity-100 transition-opacity rounded-[8px] flex flex-col items-center justify-center p-4 text-white">
+                                <p className="text-center mb-4">{project.description}</p>
+                                <div className="flex flex-wrap justify-center">
+                                    {project.technologies.map((tech, index) => (
+                                        <span key={index} className="bg-white text-black rounded-full px-2 py-1 m-1 text-xs">
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>

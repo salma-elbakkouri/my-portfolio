@@ -22,8 +22,8 @@ html, body {
 /* Default background for larger screens */
 body {
     position: relative; /* Needed for positioning the pseudo-element */
-    /* background-image: url('./assets/bgweb.jpg'); */
-    background-color: #222831;
+    background-image: url('./assets/bgweb.jpg');
+    background-color: #000000;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -116,3 +116,51 @@ canvas {
   .back-to-top:hover {
     background-color: #d3d3d30a;
   }
+
+
+
+  /* skill css */
+  /* Add this CSS to your styles */
+
+.skill-bubble {
+    perspective: 1000px;
+}
+
+.skill-content {
+    background-color: #282c34;
+    border-radius: 50%;
+    padding: 5px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.skill-content:hover {
+    transform: rotateY(180deg);
+}
+
+.skill-icon {
+    width: 2.2rem;
+    height: 2.2rem;
+}
+
+.skill-svg {
+    width: 43px;
+    height: 43px;
+}
+
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+    100% { transform: translateY(0); }
+}
+
+.skill-content {
+    animation: float 3s ease-in-out infinite;
+}

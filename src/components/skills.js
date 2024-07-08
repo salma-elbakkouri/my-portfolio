@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faReact, faAngular, faJsSquare, faNodeJs, faHtml5, faCss3Alt,
     faBootstrap, faSass, faWordpress, faAndroid,
-    faNpm
+    faNpm 
     // faUbuntu
 } from '@fortawesome/free-brands-svg-icons';
 import { ReactComponent as FigmaSvg } from '../assets/figma.svg';
@@ -14,8 +14,6 @@ import { ReactComponent as TailwindSvg } from '../assets/tailwind.svg';
 import { ReactComponent as CsharpSvg } from '../assets/csharp.svg';
 
 const Skills = () => {
-    const cardColor = '#282c34'; // Example card color
-
     const skills = [
         { id: 'react', name: 'React', icon: faReact, color: '#61DAFB' },
         { id: 'angular', name: 'Angular', icon: faAngular, color: '#DD0031' },
@@ -45,12 +43,14 @@ const Skills = () => {
             
             <div className="flex flex-row flex-wrap justify-center items-center gap-8 p-5">
                 {skills.map(skill => (
-                    <div key={skill.id} className="flex flex-col items-center justify-center w-20 h-20" style={{ backgroundColor: cardColor, borderRadius: '50%', padding: '5px', cursor: 'pointer' }}>
-                        {skill.icon ? (
-                            <FontAwesomeIcon icon={skill.icon} style={{ color: skill.color, fontSize: '2.2rem' }} />
-                        ) : (
-                            <skill.svgIcon style={{ width: '43px', height: '43px' }} />
-                        )}
+                    <div key={skill.id} className="skill-bubble">
+                        <div className="skill-content">
+                            {skill.icon ? (
+                                <FontAwesomeIcon icon={skill.icon} style={{ color: skill.color }} className="skill-icon" />
+                            ) : (
+                                <skill.svgIcon className="skill-svg" />
+                            )}
+                        </div>
                     </div>
                 ))}
             </div>
