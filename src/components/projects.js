@@ -130,7 +130,7 @@ const Projects = () => {
         }
     ];
 
-    const categories = ['All', 'UI',  'Websites', 'Mobile apps', 'Web apps', 'Desktop apps' ];
+    const categories = ['All', 'UI', 'Websites', 'Mobile apps', 'Web apps', 'Desktop apps'];
 
     const filteredProjects = selectedCategory === 'All'
         ? projects
@@ -184,7 +184,7 @@ const Projects = () => {
                             style={{ margin: '0 30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                         >
                             <img src={project.image} alt={project.title} className="w-full  rounded-[8px] cursor-pointer" />
-                            <div className="absolute inset-0 bg-black bg-opacity-70 cursor-pointer opacity-0 hover:opacity-100 transition-opacity rounded-[8px] flex flex-col items-center justify-center p-4 text-white" >
+                            <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 cursor-pointer opacity-0 hover:opacity-100 transition-opacity rounded-[8px] flex flex-col items-center justify-center p-4 text-white">
                                 <p className="text-center mb-4">{project.description}</p>
                                 <div className="flex flex-wrap justify-center">
                                     {project.technologies.map((tech, index) => (
