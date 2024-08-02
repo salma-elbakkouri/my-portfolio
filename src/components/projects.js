@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
@@ -146,13 +144,11 @@ const Projects = () => {
         setCurrentSlide(currentSlide < filteredProjects.length - 1 ? currentSlide + 1 : 0);
     };
 
-
     const handleCategoryChange = (category) => {
         setSelectedCategory(category);
         setCurrentSlide(0); // Reset to the first slide
     };
 
-    
     return (
         <div id="projects" className="flex flex-col items-center justify-center px-10 min-h-screen">
             <h2 style={{ color: '#FFFFFF', fontSize: '35px', fontWeight: '500', paddingTop: '80px' }}>
@@ -187,8 +183,8 @@ const Projects = () => {
                             className="relative flex-none w-96 h-72 rounded-lg"
                             style={{ margin: '0 30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                         >
-                            <img src={project.image} alt={project.title} className="w-full rounded-[8px] cursor-pointer" />
-                            <div className="absolute inset-0 bg-black bg-opacity-70 cursor-pointer opacity-0 hover:opacity-100 transition-opacity rounded-[8px] flex flex-col items-center justify-center p-4 text-white">
+                            <img src={project.image} alt={project.title} className="w-full  rounded-[8px] cursor-pointer" />
+                            <div className="absolute inset-0 bg-black bg-opacity-70 cursor-pointer opacity-0 hover:opacity-100 transition-opacity rounded-[8px] flex flex-col items-center justify-center p-4 text-white" >
                                 <p className="text-center mb-4">{project.description}</p>
                                 <div className="flex flex-wrap justify-center">
                                     {project.technologies.map((tech, index) => (
